@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <p class="bg-red-400">Testgggggg</p>
-      <p class="font-black font-sans text-5xl">Florian N'Gbala</p>
+      <p class="font-black  text-5xl">Florian N'Gbala</p>
     </div>
   </div>
 </template>
@@ -17,6 +17,9 @@ export default {}
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+html {
+  font-family: Nunito
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;
