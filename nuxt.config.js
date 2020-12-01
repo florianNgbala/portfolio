@@ -1,3 +1,6 @@
+const path = require('path') 
+
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -19,6 +22,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~assets/styles/tailwind.css', 
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -36,9 +40,27 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    'nuxt-webfontloader',
   ],
+  webfontloader: {
+    google: {
+      families: ['Nunito:400,600,700,800,900']
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-  }
+    postcss: {
+      plugins: {
+        'postcss-import': {},
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js'),
+        'postcss-nested': {}
+      }
+    },
+    preset: {
+      stage: 1 // see https://tailwindcss.com/docs/using-with-preprocessors#future-css-featuress
+    }
+  },
+
+
 }
