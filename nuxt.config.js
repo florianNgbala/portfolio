@@ -1,17 +1,8 @@
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-        router: {
-          base: 'portfolio'
-        }
-      }
-    : {}
-
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
-  routerBase,
+
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
